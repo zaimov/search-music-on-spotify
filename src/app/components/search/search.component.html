@@ -1,0 +1,14 @@
+<h1>{{ heading }}</h1>
+<p class="lead">{{ description }}</p>
+
+<form>
+  <div class="form-group">
+    <input 
+      type="text" 
+      class="form-control"
+      placeholder="Search Artists..."
+      [(ngModel)]="searchString"
+      name="searchString"
+      (keyup)="searchMusic()">
+  </div>
+</form>
