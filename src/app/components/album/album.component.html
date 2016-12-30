@@ -1,0 +1,36 @@
+<div *ngIf="album">
+  <div class="row">
+    <div class="col-sm-4">
+      <img class="img-thumbnail" src="{{ album.images[0].url }}" alt="{{ album.name }} cover photo">
+    </div>
+    <div class="col-sm-8">
+      <h4 *ngIf="album.artists">
+        <span *ngFor="let artist of album.artist">{{ artist.name }}</span>
+        <h2>{{ album.name }}</h2>
+        <h5>Release date: {{ album.release_date }}</h5>
+        <a class="btn btn-primary" target="_blank" href="{{ album.external_urls.spotify }}">
+          View in Spotify
+        </a>
+      </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Album tracks</h2>
+      <div *ngFor="let track of album.tracks.items">
+        <div class="row well well-sm">
+          <div class="col-sm-4">
+            {{ track.track_number }}. {{ track.name }}
+          </div>
+          <div class="col-sm-4">
+            Duration: {{ track.duration_ms }}
+          </div>
+          <div class="col-sm-4">
+            <a href="{{ track.preview_url}}" target="_blank">Preview track</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

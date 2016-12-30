@@ -1,0 +1,32 @@
+<div *ngIf="artist">
+  <div class="row artist">
+    <div class="col-md-4"></div>
+    <div class="col-md-2">
+      <div *ngIf="artist.images" >
+        <img 
+        class="artist-thumbnail"
+        src="{{artist.images[0].url}}" 
+        alt="image of {{artist.name}}">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h1>{{ artist.name }}</h1>
+      <span class="label label-primary">{{ artist.followers.total}} Followers</span>
+    </div>
+  </div>
+
+  <div class="albums">
+    <div class="row">
+      <div *ngFor="let album of albums">
+        <div class="col-md-3">
+          <div class="well">
+            <img src="{{album.images[0].url}}" alt="{{album.name}} cover photo" class="album-thumbnail">
+            <h4>{{ album.name }}</h4>
+            <a class="btn btn-primary btn-block" routerLink="/album/{{album.id}}">Album Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

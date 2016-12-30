@@ -12,3 +12,15 @@
       (keyup)="searchMusic()">
   </div>
 </form>
+
+<div *ngIf="searchResults">
+  <div *ngFor="let artist of searchResults">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="search-results well">
+          <h4><a routerLink="/artist/{{artist.id}}">{{ artist.name }}</a></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

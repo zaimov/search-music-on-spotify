@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './components/pages/about.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
+import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
 
 import { routing } from './app.routing';
 
@@ -17,7 +19,9 @@ import { SpotifyService } from './services/spotify.service';
     AppComponent,
     AboutComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
