@@ -16,10 +16,9 @@
 
 .albums {
     text-align: center;
-    overflow: auto;
     min-height: 400px;
 }
 
 .well {
-    min-height: 350px;
+    min-height: 400px;
 }

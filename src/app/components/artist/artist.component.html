@@ -2,9 +2,9 @@
   <div class="row artist">
     <div class="col-md-4"></div>
     <div class="col-md-2">
-      <div *ngIf="artist.images" >
+      <div *ngIf="artist.images.length > 0" >
         <img 
-        class="artist-thumbnail"
+        class="artist-thumbnail thumbnail"
         src="{{artist.images[0].url}}" 
         alt="image of {{artist.name}}">
       </div>
@@ -21,7 +21,11 @@
       <div *ngFor="let album of albums">
         <div class="col-md-3">
           <div class="well">
-            <img src="{{album.images[0].url}}" alt="{{album.name}} cover photo" class="album-thumbnail">
+            <img 
+              *ngIf="album.images.length > 0"
+              src="{{album.images[0].url}}" 
+              alt="{{album.name}} cover photo" 
+              class="album-thumbnail thumbnail">
             <h4>{{ album.name }}</h4>
             <a class="btn btn-primary btn-block" routerLink="/album/{{album.id}}">Album Details</a>
           </div>

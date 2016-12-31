@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Artist } from '../../models/artist.model';
-import { Album } from '../../models/album.model';
+import { Artist } from '../artist/artist.model';
+import { Album } from './album.model';
 import { SpotifyService } from '../../services/spotify.service';
+import { MilisecondsTransformPipe } from '../../shared/miliseconds-transform.pipe';
 
 @Component({
   selector: 'app-album',
@@ -21,7 +22,6 @@ export class AlbumComponent implements OnInit {
   ngOnInit() {
     this._spotifyService.getAlbum(this.albumId())
       .subscribe(album => {
-        console.log(album);
         this.album = album;
       });
   }

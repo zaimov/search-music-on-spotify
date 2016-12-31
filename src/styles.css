@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.app-blue {
+    color: #1CA8DD;
+}
+
+.app-yellow {
+    color: #E4D836;
+}
+
+.app-green {
+    color: #1BC98E;
+}
+
+.app-red {
+    color: #E64759;
+}

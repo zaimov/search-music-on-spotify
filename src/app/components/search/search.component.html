@@ -1,26 +1,87 @@
-<h1>{{ heading }}</h1>
-<p class="lead">{{ description }}</p>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>{{ heading }}</h1>
+    <p class="lead">{{ description }}</p>
+  </div><!--End of col-md-8 col-md-offset-2-->
+</div><!--End of row-->
 
-<form>
-  <div class="form-group">
-    <input 
-      type="text" 
-      class="form-control"
-      placeholder="Search Artists..."
-      [(ngModel)]="searchString"
-      name="searchString"
-      (keyup)="searchMusic()">
-  </div>
-</form>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <form>
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-control"
+          placeholder="Search Artists..."
+          [(ngModel)]="searchString"
+          name="searchString"
+          (keyup)="searchMusic()">
+      </div><!--End of form-group-->
+    </form>
+  </div><!--End of col-md-8 col-md-offset-2-->
+</div><!--End of row-->
 
-<div *ngIf="searchResults">
-  <div *ngFor="let artist of searchResults">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="search-results well">
-          <h4><a routerLink="/artist/{{artist.id}}">{{ artist.name }}</a></h4>
-        </div>
-      </div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div *ngIf="artists.length > 0">
+      <div class="well well-sm" *ngFor="let artist of artists">
+        <div class="row">
+         
+          <div class="col-sm-10">
+            <h4>
+              <a routerLink="/artist/{{artist.id}}">
+                <span class="app-yellow">Artist:</span> {{ artist.name }}
+              </a>
+            </h4>
+          </div>
+          <div class="col-sm-2" *ngIf="artist.images.length > 0">
+            <img src="{{ artist.images[0].url }}" 
+              alt="Thumbnail of {{ artist.name }}" 
+              class="thumbnail search-thumbnail pull-right">
+          </div><!--End of col-sm-6-->
+        </div><!--End of row-->
+      </div><!--End of well well-sm-->
     </div>
-  </div>
-</div>
+
+    <div *ngIf="albums.length > 0">
+      <div class="well well-sm" *ngFor="let album of albums">
+        <div class="row">
+         
+          <div class="col-sm-10">
+            <h4 >
+              <a routerLink="/album/{{album.id}}">
+                <span class="app-green">Album:</span> {{ album.name }}
+              </a>
+            </h4>
+          </div>
+          <div class="col-sm-2" *ngIf="album.images.length > 0">
+            <img src="{{ album.images[0].url }}" 
+              alt="Thumbnail of {{ album.name }}" 
+              class="thumbnail search-thumbnail pull-right">
+          </div><!--End of col-sm-6-->
+        </div><!--End of row-->
+      </div><!--End of well well-sm-->
+    </div>
+
+     <div *ngIf="tracks.length > 0">
+      <div class="well well-sm" *ngFor="let track of tracks">
+        <div class="row">
+         
+          <div class="col-sm-10">
+            <h4 >
+              <a target="_blank" href="{{ track.preview_url }}">
+                <span class="app-red">Preview Track:</span> {{ track.name }}
+              </a>
+            </h4>
+          </div>
+          <div class="col-sm-2" *ngIf="track.album.images.length > 0">
+            <img src="{{ track.album.images[0].url }}" 
+              alt="Thumbnail of {{ track.name }}" 
+              class="thumbnail search-thumbnail pull-right">
+          </div><!--End of col-sm-6-->
+        </div><!--End of row-->
+      </div><!--End of well well-sm-->
+    </div>
+
+  </div><!--End of col-md-10 col-md-offset-1-->
+</div><!--End of row-->

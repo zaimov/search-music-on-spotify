@@ -11,11 +11,13 @@ export class SpotifyService {
 
   constructor(private _http: Http) { }
 
-  searchMusic(searchString: string, type='artist') {
-    this.searchUrl = 'https://api.spotify.com/v1/search?query=' + searchString 
-      + '&offset=0&limit=20&type=' + type + '&market=US';
-    return this._http.get(this.searchUrl)
-      .map(response => response.json());
+  searchMusic(searchString: string, type='artist,album,track') {
+    if (searchString) {
+      this.searchUrl = 'https://api.spotify.com/v1/search?query=' + searchString 
+        + '&offset=0&limit=5&type=' + type + '&market=US';
+      return this._http.get(this.searchUrl)
+        .map(response => response.json());
+    }
   }
 
   getArtist(artistId: string) {
