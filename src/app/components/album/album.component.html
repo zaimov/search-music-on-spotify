@@ -8,7 +8,7 @@
         <div class="col-sm-8">
           <h4 *ngIf="album.artists.length > 0">
             <span *ngFor="let artist of album.artists">
-              <a routerLink="/artist/{{artist.id}}" class="app-green">{{ artist.name }}</a>
+              <a routerLink="/artist/{{artist.id}}" class="app-green artists-presentation">{{ artist.name }}</a>
             </span>
           </h4>
           <h2 class="app-blue">{{ album.name }}</h2>
