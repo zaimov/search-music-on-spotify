@@ -23,8 +23,8 @@ import { Album } from '../album/album.model';
 export class SearchComponent implements OnInit {
 
   private heading = 'Do You Want To Listen To Good Music?';
-  private description = `Use the ng2Spotify application to browse new releases
-    and find your favourite songs.`;
+  private description = `Use the Search Music on Spotify application to browse new releases
+    and find your favourite artists, albums and songs.`;
   private searchString: string;
   private searchResults: any[] = [];
   private artists: Artist[] = [];

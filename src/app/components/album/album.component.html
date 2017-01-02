@@ -6,14 +6,16 @@
           <img class="img-thumbnail" src="{{ album.images[0].url }}" alt="{{ album.name }} cover photo">
         </div>
         <div class="col-sm-8">
-          <h4 *ngIf="album.artists">
-            <span *ngFor="let artist of album.artist">{{ artist.name }}</span>
-            <h2>{{ album.name }}</h2>
-            <h5>Release date: {{ album.release_date }}</h5>
-            <a class="btn btn-primary" target="_blank" href="{{ album.external_urls.spotify }}">
-              View in Spotify
-            </a>
+          <h4 *ngIf="album.artists.length > 0">
+            <span *ngFor="let artist of album.artists">
+              <a routerLink="/artist/{{artist.id}}" class="app-green">{{ artist.name }}</a>
+            </span>
           </h4>
+          <h2 class="app-blue">{{ album.name }}</h2>
+          <h5 class="app-yellow">Release date: {{ album.release_date }}</h5>
+          <a class="btn btn-primary" target="_blank" href="{{ album.external_urls.spotify }}">
+            View in Spotify
+          </a>
         </div>
       </div>
 
