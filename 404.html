@@ -1,20 +1,14 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Spotify</title>
-  <base href="/search-music-on-spotify/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="assets/css/toolkit-inverse.min.css" rel="stylesheet">
-<link href="styles.2405abdcaca3b1fff125.bundle.css" rel="stylesheet"></head>
-<body>
-  <app-root>Loading...</app-root>
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-  <script src="assets/js/toolkit.min.js"></script>
-<script type="text/javascript" src="inline.91a6a5be9f006e3dc4f4.bundle.js"></script><script type="text/javascript" src="main.7b7783add4cc8d96dd3d.bundle.js"></script></body>
+  <head>
+    <!-- This stores the URL the user was attempting to go to in sessionStorage,
+    and then redirects all 404 responses to the app’s index.html page -->
+    <!-- See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/ -->
+    <script>
+      sessionStorage.redirect = location.href;
+    </script>
+    <meta http-equiv="refresh" content="0;URL='https://USERNAME.github.io/PROJECT_NAME'"></meta>
+  </head>
+  <body>
+  </body>
 </html>
